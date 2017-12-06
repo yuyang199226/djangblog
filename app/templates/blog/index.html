@@ -10,11 +10,11 @@
             <!-- 博客正文实体 -->
             <h1 class="page-header">
                 {% if cate_name %}
-                    分类：{{ cate_name }}
+                    Categories：{{ cate_name }}
                 {% elif tag_name %}
-                    标签: {{ tag_name }}
+                    Tags: {{ tag_name }}
                 {% else %}
-                    我的文章
+                    My Articles
                 {% endif %}
             </h1>
 
@@ -27,12 +27,12 @@
                     <h2>
                         <a href="{% url 'app:detail' article.pk %}">{{ article.title }}</a>
                     </h2>
-                    <p><span class="glyphicon glyphicon-time"></span> {{ article.created_time }}</p>
+                    <p><span class="glyphicon glyphicon-time"></span> {{ article.created_time|date:'Y-m-d' }} <span class="post-views">Views: {{ article.views }}</span></p>
                     <hr>
                     <p>{{ article.body | safe | truncatewords:10}}</p>
                 </div>
                 <div><a class="btn btn-primary" href="{% url 'app:detail' article.pk %}">Read More <span class="glyphicon glyphicon-chevron-right"></span></a></div>
-                <span class="post-views">阅读量: {{ article.views }}</span>
+                
                 <hr>
                 {% endfor %}
             </div>
@@ -68,8 +68,11 @@
 
             <!-- Side Widget Well -->
             <div class="well">
-                <h4><span class="glyphicon glyphicon-align-justify"></span>    博客介绍</h4>
-                <p>欢迎来到我的个人博客，此博客主要用于记录技术随笔，个人感想等各种杂文。由于初学编程，个中纰漏，望请指出，谢谢！</p>
+                <h4><span class="glyphicon glyphicon-align-justify"></span> BLog Introduction</h4>
+                <p>Welcome to my Blog! I hope that guys can learn a bit 
+                        from my ariticles written by me.If you have some questions ,
+                        glad to communicate with me.As for me,I am willing to share 
+                        and learn new knowledge</p>
             </div>
 
         </div>

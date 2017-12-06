@@ -4,6 +4,7 @@ from .forms import BlogCommentForm, SuggestForm
 from django.shortcuts import get_object_or_404, redirect, get_list_or_404
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
+from django.utils.safestring import SafeString
 import markdown
 import re
 import logging
@@ -54,11 +55,14 @@ class ArticleDetailView(DetailView):
         # 点击一次阅读量增加一次
         obj.views += 1
         obj.save()
-        obj.body = markdown.markdown(obj.body, safe_mode='escape',
-        extensions=[
-            'markdown.extensions.nl2br',
-            'markdown.extensions.fenced_code'
-        ])
+        print('>>>>>',type(obj))
+        obj.body = SafeString(obj.body)
+
+        # obj.body = markdown.markdown(obj.body, safe_mode='escape',
+        # extensions=[
+        #     'markdown.extensions.nl2br',
+        #     'markdown.extensions.fenced_code'
+        # ])
         return obj
 
     # 新增form到上下文

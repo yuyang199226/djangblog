@@ -1,5 +1,5 @@
 <div class="col-sm-12" style ='background-color: #ccffcc;'>
-    <h4 class="'lead">评论详情</h4>
+    <h4 class="'lead">Details</h4>
     <form method="post" action="{% url 'app:comment' article.pk %}">
         {% csrf_token %}
         {% for field in form %}
@@ -7,14 +7,14 @@
         {{ field.errors }}
         <br>
         {% endfor %}
-        <button type="submit">评论</button>
+        <button type="submit">Comments评论</button>
     </form>
     <hr>
     {% for comment in comment_list %}
         <span class="'user-nickname">{{ comment.user_name }}</span>
         <time class="time">{{ comment.created_time }}</time>
         <div class="comment-content">{{ comment.body }}</div>
-        <div><a href="">回复</a></div>
+        <div><a href="">Reply</a></div>
     <hr>
     {% endfor %}
 </div>

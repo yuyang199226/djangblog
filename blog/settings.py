@@ -35,7 +35,7 @@ ALLOWED_HOSTS = []
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/0",
+        "LOCATION": "redis://192.168.0.102:6379/0",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
@@ -115,10 +115,6 @@ DATABASES = {
         'PASSWORD': '123',
         'HOST': '127.0.0.1',
         'PORT': '3306',
-        'OPTIONS': {
-            'sql_mode': 'traditional',
-            'charset': 'utf8mb4',
-        }
     }
 }
 

@@ -10,7 +10,7 @@
                 <p><span class="glyphicon glyphicon-time"></span> {{ article.created_time }}</p>
                 <br>
             </div>
-            <span class="post-views">阅读量: {{ article.views }}</span>
+            <span class="post-views">Views: {{ article.views }}</span>
             <div>
             <p class="lead">{{ article.body | safe}}</p>
             </div>
@@ -27,7 +27,7 @@
             <!-- Blog Search Well -->
 
             <div class="well">
-                <h4>Blog Search</h4>
+                <h3>Search</h3>
                 <form action="/search/" method="get">
                     <div class="input-group">
                         <input type="text" name="search_for" class="form-control">
@@ -49,8 +49,11 @@
 
             <!-- Side Widget Well -->
             <div class="well">
-                <h4><span class="glyphicon glyphicon-align-justify"></span>    博客介绍</h4>
-                <p>欢迎来到我的个人博客，此博客主要用于记录技术随笔，个人感想等各种杂文。由于初学编程，个中纰漏，望请指出，谢谢！</p>
+                <h4><span class="glyphicon glyphicon-align-justify"></span>Blog Introduction</h4>
+                <p>Welcome to my Blog! I hope that guys can learn a bit 
+                    from my ariticles written by me.If you have some questions ,
+                    glad to communicate with me.As for me,I am willing to share 
+                    and learn new knowledge</p>
             </div>
 
         </div>

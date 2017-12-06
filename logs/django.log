@@ -79,3 +79,123 @@ django.db.utils.ProgrammingError: (1146, "Table 'blog.app_article' doesn't exist
 ERROR 2017-10-07 10:24:31,582 views 13373 140030823622400 é‚®ä»¶å‘é€å¤±è´¥: Error 111 connecting to localhost:6379. Connection refused.
 ERROR 2017-10-07 11:02:40,385 views 26434 139984518506240 é‚®ä»¶å‘é€å¤±è´¥: (535, b'5.7.8 authentication failed')
 ERROR 2017-10-07 11:03:13,011 views 26595 140543109977856 é‚®ä»¶å‘é€å¤±è´¥: (535, b'5.7.12 SMTP access disabled')
+ERROR 2017-12-06 13:43:39,729 exception 3532 5556 Internal Server Error: /article/3
+Traceback (most recent call last):
+  File "D:\Python36\lib\site-packages\django_redis\cache.py", line 34, in _decorator
+    return method(self, *args, **kwargs)
+  File "D:\Python36\lib\site-packages\django_redis\cache.py", line 83, in get
+    client=client)
+  File "D:\Python36\lib\site-packages\django_redis\client\default.py", line 209, in get
+    raise ConnectionInterrupted(connection=client, parent=e)
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. ÓÉÓÚÄ¿±ê¼ÆËã»ú»ı¼«¾Ü¾ø£¬ÎŞ·¨Á¬½Ó¡£.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python36\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "D:\Python36\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Python36\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python36\lib\site-packages\django\utils\decorators.py", line 141, in _wrapped_view
+    result = middleware.process_request(request)
+  File "D:\Python36\lib\site-packages\django\middleware\cache.py", line 133, in process_request
+    cache_key = get_cache_key(request, self.key_prefix, 'GET', cache=self.cache)
+  File "D:\Python36\lib\site-packages\django\utils\cache.py", line 318, in get_cache_key
+    headerlist = cache.get(cache_key)
+  File "D:\Python36\lib\site-packages\django_redis\cache.py", line 41, in _decorator
+    raise e.parent
+  File "D:\Python36\lib\site-packages\django_redis\client\default.py", line 207, in get
+    value = client.get(key)
+  File "D:\Python36\lib\site-packages\redis\client.py", line 880, in get
+    return self.execute_command('GET', name)
+  File "D:\Python36\lib\site-packages\redis\client.py", line 578, in execute_command
+    connection.send_command(*args)
+  File "D:\Python36\lib\site-packages\redis\connection.py", line 563, in send_command
+    self.send_packed_command(self.pack_command(*args))
+  File "D:\Python36\lib\site-packages\redis\connection.py", line 538, in send_packed_command
+    self.connect()
+  File "D:\Python36\lib\site-packages\redis\connection.py", line 442, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. ÓÉÓÚÄ¿±ê¼ÆËã»ú»ı¼«¾Ü¾ø£¬ÎŞ·¨Á¬½Ó¡£.
+ERROR 2017-12-06 13:43:39,809 exception 3532 7104 Internal Server Error: /article/3
+Traceback (most recent call last):
+  File "D:\Python36\lib\site-packages\django_redis\cache.py", line 34, in _decorator
+    return method(self, *args, **kwargs)
+  File "D:\Python36\lib\site-packages\django_redis\cache.py", line 83, in get
+    client=client)
+  File "D:\Python36\lib\site-packages\django_redis\client\default.py", line 209, in get
+    raise ConnectionInterrupted(connection=client, parent=e)
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. ÓÉÓÚÄ¿±ê¼ÆËã»ú»ı¼«¾Ü¾ø£¬ÎŞ·¨Á¬½Ó¡£.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python36\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "D:\Python36\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Python36\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python36\lib\site-packages\django\utils\decorators.py", line 141, in _wrapped_view
+    result = middleware.process_request(request)
+  File "D:\Python36\lib\site-packages\django\middleware\cache.py", line 133, in process_request
+    cache_key = get_cache_key(request, self.key_prefix, 'GET', cache=self.cache)
+  File "D:\Python36\lib\site-packages\django\utils\cache.py", line 318, in get_cache_key
+    headerlist = cache.get(cache_key)
+  File "D:\Python36\lib\site-packages\django_redis\cache.py", line 41, in _decorator
+    raise e.parent
+  File "D:\Python36\lib\site-packages\django_redis\client\default.py", line 207, in get
+    value = client.get(key)
+  File "D:\Python36\lib\site-packages\redis\client.py", line 880, in get
+    return self.execute_command('GET', name)
+  File "D:\Python36\lib\site-packages\redis\client.py", line 578, in execute_command
+    connection.send_command(*args)
+  File "D:\Python36\lib\site-packages\redis\connection.py", line 563, in send_command
+    self.send_packed_command(self.pack_command(*args))
+  File "D:\Python36\lib\site-packages\redis\connection.py", line 538, in send_packed_command
+    self.connect()
+  File "D:\Python36\lib\site-packages\redis\connection.py", line 442, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. ÓÉÓÚÄ¿±ê¼ÆËã»ú»ı¼«¾Ü¾ø£¬ÎŞ·¨Á¬½Ó¡£.
+ERROR 2017-12-06 13:45:23,584 exception 3532 6980 Internal Server Error: /article/4
+Traceback (most recent call last):
+  File "D:\Python36\lib\site-packages\django_redis\cache.py", line 34, in _decorator
+    return method(self, *args, **kwargs)
+  File "D:\Python36\lib\site-packages\django_redis\cache.py", line 83, in get
+    client=client)
+  File "D:\Python36\lib\site-packages\django_redis\client\default.py", line 209, in get
+    raise ConnectionInterrupted(connection=client, parent=e)
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. ÓÉÓÚÄ¿±ê¼ÆËã»ú»ı¼«¾Ü¾ø£¬ÎŞ·¨Á¬½Ó¡£.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Python36\lib\site-packages\django\core\handlers\exception.py", line 39, in inner
+    response = get_response(request)
+  File "D:\Python36\lib\site-packages\django\core\handlers\base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\Python36\lib\site-packages\django\core\handlers\base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Python36\lib\site-packages\django\utils\decorators.py", line 141, in _wrapped_view
+    result = middleware.process_request(request)
+  File "D:\Python36\lib\site-packages\django\middleware\cache.py", line 133, in process_request
+    cache_key = get_cache_key(request, self.key_prefix, 'GET', cache=self.cache)
+  File "D:\Python36\lib\site-packages\django\utils\cache.py", line 318, in get_cache_key
+    headerlist = cache.get(cache_key)
+  File "D:\Python36\lib\site-packages\django_redis\cache.py", line 41, in _decorator
+    raise e.parent
+  File "D:\Python36\lib\site-packages\django_redis\client\default.py", line 207, in get
+    value = client.get(key)
+  File "D:\Python36\lib\site-packages\redis\client.py", line 880, in get
+    return self.execute_command('GET', name)
+  File "D:\Python36\lib\site-packages\redis\client.py", line 578, in execute_command
+    connection.send_command(*args)
+  File "D:\Python36\lib\site-packages\redis\connection.py", line 563, in send_command
+    self.send_packed_command(self.pack_command(*args))
+  File "D:\Python36\lib\site-packages\redis\connection.py", line 538, in send_packed_command
+    self.connect()
+  File "D:\Python36\lib\site-packages\redis\connection.py", line 442, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. ÓÉÓÚÄ¿±ê¼ÆËã»ú»ı¼«¾Ü¾ø£¬ÎŞ·¨Á¬½Ó¡£.
