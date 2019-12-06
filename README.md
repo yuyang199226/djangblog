@@ -9,19 +9,17 @@
     - python3
     - django
 
-## 部署
+## 运行
 
-使用docker 是最简单的
+1. 安装docker docker-compose
 
-确保你的机器上已经安装了 __docker__
-
-1. 构建镜像
+2. 构建镜像
    
 `docker build -t blog .`
 
-2. 使用docker-compose 启动
+3. 使用docker-compose 启动
    
 `docker-compose -f docker-compose.yaml up -d`
 
-访问 http://127.0.0.1:8080 。 如果看到页面，说明启动成功了！
+4. 访问 http://127.0.0.1:8080 。 如果看到页面，说明启动成功了！
 
