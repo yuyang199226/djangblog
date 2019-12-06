@@ -199,3 +199,81 @@ Traceback (most recent call last):
   File "D:\Python36\lib\site-packages\redis\connection.py", line 442, in connect
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. 由于目标计算机积极拒绝，无法连接。.
+ERROR 2019-12-06 11:20:10,313 exception 64863 123145558691840 Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/django/db/backends/mysql/base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/pymysql/connections.py", line 856, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/pymysql/connections.py", line 1057, in _read_query_result
+    result.read()
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/pymysql/connections.py", line 1340, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/pymysql/connections.py", line 1014, in _read_packet
+    packet.check_error()
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/pymysql/connections.py", line 393, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/pymysql/err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'blog.app_article' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/django/core/handlers/exception.py", line 39, in inner
+    response = get_response(request)
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/django/views/generic/base.py", line 68, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/django/views/generic/base.py", line 88, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/django/views/generic/list.py", line 159, in get
+    self.object_list = self.get_queryset()
+  File "/Users/yuyang/github/djangblog/app/views.py", line 30, in get_queryset
+    for article in article_list:
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/django/db/models/query.py", line 256, in __iter__
+    self._fetch_all()
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/django/db/models/query.py", line 1087, in _fetch_all
+    self._result_cache = list(self.iterator())
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/django/db/models/query.py", line 54, in __iter__
+    results = compiler.execute_sql()
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/django/db/models/sql/compiler.py", line 835, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/django/db/backends/utils.py", line 79, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/django/db/backends/utils.py", line 64, in execute
+    return self.cursor.execute(sql, params)
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/django/db/backends/mysql/base.py", line 112, in execute
+    return self.cursor.execute(query, args)
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/pymysql/cursors.py", line 166, in execute
+    result = self._query(query)
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/pymysql/connections.py", line 856, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/pymysql/connections.py", line 1057, in _read_query_result
+    result.read()
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/pymysql/connections.py", line 1340, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/pymysql/connections.py", line 1014, in _read_packet
+    packet.check_error()
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/pymysql/connections.py", line 393, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/yuyang/github/djangblog/.venv/lib/python3.7/site-packages/pymysql/err.py", line 107, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.ProgrammingError: (1146, "Table 'blog.app_article' doesn't exist")

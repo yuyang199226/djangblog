@@ -1,0 +1,33 @@
+version: "3.3"
+
+services:
+  mysql:
+    container_name: mysql-${USER}
+    image: mysql:5.7.24
+    restart: always
+    networks:
+      - new
+    ports:
+      - 3306:3306
+    volumes:
+      - ./schemas:/schemas
+    command: --init-file /schemas/init.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+
+  blog:
+    image: blog
+    container_name: blog-${USER}
+    restart: always
+    networks:
+      - new
+    ports:
+      - 8080:80
+    expose:
+      - "80"
+    depends_on:
+      - mysql
+    command: ["/bin/sh", "run.sh"]  # change config
+
+networks:
+  new:      

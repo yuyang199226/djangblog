@@ -14,7 +14,7 @@ django-registration-redux==1.4
 gunicorn==19.6.0
 jieba==0.38
 jsonfield==1.0.3
-kombu==4.0.2
+kombu==4.2.0
 Markdown==2.6.8
 PyMySQL==0.7.11
 pytz==2016.4
